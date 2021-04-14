@@ -138,7 +138,7 @@ this is the true output:
 
 ```
 
-you can test http://localhost:8080 on your browser.
+you can test localhost:8080 on your browser.
 
 let's create new module and test it.
 
@@ -160,7 +160,7 @@ Create new action
 
 Create new route
 
-`./artisan make:route test myApp def index`
+`./artisan make:route test myApp Handler index`
 
 Then you can dump autoload.
 
@@ -168,5 +168,5 @@ Then you can dump autoload.
 
 `./artisan serve`
 
-Then if you enter https://localhost:8080/test you will see Index.
+Then if you enter localhost:8080/test you will see Index.
 You can change this view from app/myApp/Views/index.php
