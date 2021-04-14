@@ -129,4 +129,46 @@ class $className extends BaseController
 
         fclose($readFile);
     }
+
+    public function createRoute(
+        string $route,
+        string $module,
+        string $controller,
+        string $action
+    ) {
+
+        $readFile = fopen(__DIR__ . "/../Routing.php", "r");
+        $allSource = fread($readFile, 10240);
+
+        $writeFile = fopen(__DIR__ . "/../Routing.php", "w");
+
+        $newRoute = "
+        [
+            'route' => '$route',
+            'module' => '$module',
+            'controller' => '$controller',
+            'action' => '$action',
+        ],
+    ];";
+
+
+        $sepratedByLine = explode("\n", $allSource);
+
+        $openedFlag = false;
+
+        for ($i = 0; $i < count($sepratedByLine); $i++) {
+            if (strpos($sepratedByLine[$i], "public \$routes = ["))
+                $openedFlag = true;
+
+            if ($openedFlag and strpos($sepratedByLine[$i], "];")) {
+                $sepratedByLine[$i] = $newRoute;
+                break;
+            }
+        }
+
+        fwrite($writeFile, implode("\n", $sepratedByLine));
+
+        fclose($readFile);
+        fclose($writeFile);
+    }
 }

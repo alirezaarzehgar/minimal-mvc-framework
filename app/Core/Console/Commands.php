@@ -209,6 +209,26 @@ class Commands
         mkdir($modulePath);
     }
 
+    private function makeRoute(array $args)
+    {
+        $route = $args[0] ?? null;
+        $module = $args[1] ?? null;
+        $controller = $args[2] ?? null;
+        $action = $args[3] ?? null;
+
+        !is_null($route) ?: $this->error("Not enough arguments (missing: \"route name\").");
+        !is_null($module) ?: $this->error("Not enough arguments (missing: \"module name\").");
+        !is_null($controller) ?: $this->error("Not enough arguments (missing: \"controller name\").");
+        !is_null($action) ?: $this->error("Not enough arguments (missing: \"action name\").");
+
+        $this->defaultCode->createRoute(
+            $route,
+            $module,
+            $controller,
+            $action
+        );
+    }
+
     public static function make(string $makeCommand, array $arg)
     {
         $class = new Commands;
