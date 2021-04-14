@@ -56,8 +56,6 @@ app
     you should create and change your app routes from this file.
 
 
-    ```
-
     public $routes = [
         [
             'route' => '',
@@ -66,9 +64,6 @@ app
             'action' => 'index',
         ]
     ];
-
-
-    ```
 
 
     you should add new routes to this variable.
