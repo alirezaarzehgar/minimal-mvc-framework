@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+`composer dump-autoload -o`;
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Core\Console\App;
