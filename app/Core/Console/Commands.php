@@ -221,6 +221,12 @@ class Commands
         !is_null($controller) ?: $this->error("Not enough arguments (missing: \"controller name\").");
         !is_null($action) ?: $this->error("Not enough arguments (missing: \"action name\").");
 
+        $modulesFolder = __DIR__ . "/../../$module";
+        $controllersFolder = __DIR__ . "/../../$module/Controllers/$controller.php";
+
+        !file_exists($modulesFolder) ?: $this->error("module $module not found.");
+        !file_exists($controllersFolder) ?: $this->error("controller $controller not found.");
+
         $this->defaultCode->createRoute(
             $route,
             $module,
