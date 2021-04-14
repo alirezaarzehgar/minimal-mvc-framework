@@ -11,7 +11,8 @@ class App
         $firstArg = explode(':', $args[1] ?? null);
         $parameters = array_slice($args, 2);
 
-        is_null($firstArg[0] ?? null) ?: Manual::Help();
+        !(count($args) < 2) ?: Manual::Help();
+        !(count($firstArg) < 2) ?: Manual::Help();
 
         if ($firstArg[0] == 'serve') {
             $commands->serve($parameters);
