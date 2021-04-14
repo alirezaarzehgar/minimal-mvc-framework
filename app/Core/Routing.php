@@ -10,12 +10,6 @@ class Routing
             'module' => 'Default',
             'controller' => 'DefaultController',
             'action' => 'index',
-        ],
-        [
-            'route' => 'test',
-            'module' => 'new',
-            'controller' => 'Ali',
-            'action' => 'index'
         ]
     ];
 
