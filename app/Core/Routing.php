@@ -10,7 +10,7 @@ class Routing
             'module' => 'Default',
             'controller' => 'DefaultController',
             'action' => 'index',
-        ]
+        ],
     ];
 
     public function __construct()
