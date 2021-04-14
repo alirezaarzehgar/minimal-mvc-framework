@@ -15,7 +15,7 @@ class App
             $commands->serve($parameters);
         } elseif ($firstArg[0] == 'make') {
             foreach (Commands::$commands['make'] as $makeCommand) {
-                if ($makeCommand == $firstArg[1])
+                if ($makeCommand == ($firstArg[1] ?? null))
                     $commands->make($firstArg[1], $parameters);
             }
         }
