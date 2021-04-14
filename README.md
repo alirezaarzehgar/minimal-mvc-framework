@@ -139,3 +139,34 @@ this is the true output:
 ```
 
 you can test http://localhost:8080 on your browser.
+
+let's create new module and test it.
+
+Create new module
+
+`./artisan make:module myApp`
+
+Create new controller
+
+`./artisan make:controller myApp Handler`
+
+Create new view
+
+`./artisan make:view myApp def index`
+
+Create new action
+
+`./artisan make:action myApp Handler index def index`
+
+Create new route
+
+`./artisan make:route test myApp def index`
+
+Then you can dump autoload.
+
+`composer dump-autoload -o`
+
+`./artisan serve`
+
+Then if you enter https://localhost:8080/test you will see Index.
+You can change this view from app/myApp/Views/index.php
