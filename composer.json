@@ -1,0 +1,19 @@
+{
+    "name": "ali\/simple-mvc-framework",
+    "description": "this is an small framework for developing web applications.",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "you@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "app\/Core",
+            "Default\\": "app\/Default",
+            "new\\": "app\/new"
+        }
+    },
+    "require": {}
+}
